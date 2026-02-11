@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.strawbox.cookeats",
+    "sha256_cert_fingerprints": [
+      "DC:5B:25:BD:34:E4:F1:65:ED:D2:01:8D:AA:91:AC:F8:4D:D4:04:05:B7:D4:8C:1F:72:FA:3B:D8:21:7E:44:68"
+    ]
+  }
+}]
