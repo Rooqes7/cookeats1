@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opening CookEats...</title>
+    <script>
+        window.onload = function() {
+            // 1. Get the UUID from the URL path or search query
+            // Example: https://rooqes7.github.io/cookeats1/recipe/?id=UUID
+            const urlParams = new URLSearchParams(window.location.search);
+            const uuid = urlParams.get('id');
+
+            if (uuid) {
+                // 2. Attempt to redirect to the app
+                const appLink = "cookeats://recipe/" + uuid;
+                window.location.href = appLink;
+
+                // 3. Optional: Fallback if the app isn't installed after 2 seconds
+                setTimeout(function() {
+                    document.getElementById("status").innerHTML = 
+                        "If the app didn't open, <a href='https://play.google.com/store/apps/details?id=com.strawbox.cookeats'>click here to download it.</a>";
+                }, 2000);
+            } else {
+                document.getElementById("status").innerText = "No recipe ID found in the link.";
+            }
+        };
+    </script>
+</head>
+<body style="text-align: center; font-family: sans-serif; padding-top: 50px;">
+    <div id="status">Redirecting you to the CookEats app...</div>
+</body>
+</html>
